@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="SYSLOG" class="org.apache.log4j.net.SyslogAppender">
+    <errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+    <param name="Facility" value="LOCAL7"/>
+    <param name="FacilityPrinting" value="false"/>
+    <param name="Header" value="true"/>
+    <param name="SyslogHost" value="logs4.papertrailapp.com:31109"/>
+    <param name="ConversionPattern" value="%p: %c{2} %x %m %n"/>
+    </appender>
+    <root>
+        <appender-ref ref="SYSLOG" />
+    </root>
+</log4j:configuration>
